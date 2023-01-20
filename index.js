@@ -54,6 +54,7 @@ client.login(process.env.TOKEN);
 
 app.post('/ez', (req, res) => {
 	console.log(req.query);
+	res.status(200).send("Received");
 })
 
 const PORT = process.env.PORT || 3000;
