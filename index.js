@@ -52,6 +52,10 @@ client.once(Events.ClientReady, c => {
 // Log in to Discord with your client's token
 client.login(process.env.TOKEN);
 
+app.post('/ez', (req, res) => {
+	console.log(req.query);
+})
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Our app is running on port ${ PORT }`);
