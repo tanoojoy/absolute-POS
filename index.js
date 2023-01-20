@@ -1,9 +1,10 @@
 const fs = require('node:fs');
+const express = require('express');
 const path = require('node:path');
 const { Client, Events, GatewayIntentBits, Collection } = require('discord.js');
 require('dotenv').config();
 
-
+const app = express();
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -50,3 +51,8 @@ client.once(Events.ClientReady, c => {
 
 // Log in to Discord with your client's token
 client.login(process.env.TOKEN);
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
