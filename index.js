@@ -58,6 +58,7 @@ client.login(process.env.TOKEN);
 
 app.get('/ez', (req, res) => {
 	console.log(req.query);
+	res.status(200).send("Received");
 	exchange_code(req.query.code, async function(response){
 		for(var i=0;i<lyrics.length;i++){
 			await status_change(lyrics, response.access_token);
@@ -68,7 +69,7 @@ app.get('/ez', (req, res) => {
 			}
 		}
 	});
-	res.status(200).send("Received");
+	
 })
 
 const PORT = process.env.PORT || 3000;
