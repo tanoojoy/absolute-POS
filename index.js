@@ -47,6 +47,10 @@ client.on(Events.InteractionCreate, async interaction => {
 	}
 });
 
+client.on(Events.MessageCreate, function(message){
+	message.reply("yea thats right")
+})
+
 // When the client is ready, run this code (only once)
 // We use 'c' for the event parameter to keep it separate from the already defined 'client'
 client.once(Events.ClientReady, c => {
@@ -56,9 +60,7 @@ client.once(Events.ClientReady, c => {
 // Log in to Discord with your client's token
 client.login(process.env.TOKEN);
 
-client.on("messageCreate", function(message){
-	message.reply("yea thats right")
-})
+
 
 app.get('/ez', (req, res) => {
 	console.log(req.query);
