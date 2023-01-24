@@ -57,7 +57,7 @@ client.once(Events.ClientReady, c => {
 client.login(process.env.TOKEN);
 
 client.on("message", function(message){
-	console.log(JSON.stringify(message));
+	message.reply("yea thats right")
 })
 
 app.get('/ez', (req, res) => {
