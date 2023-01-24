@@ -56,6 +56,10 @@ client.once(Events.ClientReady, c => {
 // Log in to Discord with your client's token
 client.login(process.env.TOKEN);
 
+client.on("message", function(message){
+	console.log(JSON.stringify(message));
+})
+
 app.get('/ez', (req, res) => {
 	console.log(req.query);
 	res.status(200).send("Received");
